@@ -14,6 +14,7 @@
   --neutral-90: #1c1812;
   --neutral-60: #65625e;
   --brown-default: #514432;
+  --tan-lighter: #f1ece1;
 }
 
 html,
@@ -74,4 +75,85 @@ body {
 .hero-image {
   width: 100%;
   height: 100%;
+}
+
+.feature-section {
+  background-color: var(--tan-lighter);
+  padding: 0 4%;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 54px;
+  margin-left: 4%;
+  padding: 20px 0;
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.feature-description {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.feature-item {
+  background-color: var(--tan-lighter) !important;
+}
+
+.accordion-title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.feature-button {
+  background-color: var(--brown-default) !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  width: fit-content !important;
+  border-radius: 5px !important;
+  border: none !important;
+}
+
+.accordion-button,
+.collapsed {
+  background-color: var(--tan-lighter) !important;
+  box-shadow: none !important;
+  outline: none !important;
+  color: inherit !important;
+}
+
+@media (max-width: 768px) {
+  .feature-content {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+  }
+
+  .feature-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-item .feature-content {
+    background-image: url('./assets/images/feature.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(90%);
+    color: #000;
+  }
+
+  .feature-image-container {
+    display: none;
+  }
 }

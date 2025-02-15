@@ -1,7 +1,7 @@
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import hero from '../assets/images/hero.png';
 
-const HeroSection = () => (
+const Hero = () => (
   <Container fluid className="hero-section d-flex align-items-center">
     <Row className="w-100 px-4 px-md-5">
       <Col xs={12} md={6} className="d-flex justify-content-center order-md-2 order-1 mb-4 mb-md-0">
@@ -26,4 +26,4 @@ const HeroSection = () => (
   </Container>
 );
 
-export default HeroSection;
+export default Hero;

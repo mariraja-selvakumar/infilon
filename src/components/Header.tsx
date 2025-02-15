@@ -4,7 +4,7 @@ import burger from '../assets/icons/burger.png';
 import moon from '../assets/icons/moon.png';
 import logo from '../assets/icons/logo.png';
 
-const NavigationBar = () => {
+const Header = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -55,4 +55,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default Header;

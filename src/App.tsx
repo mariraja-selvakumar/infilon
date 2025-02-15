@@ -1,10 +1,12 @@
-import HeroSection from './components/HeroSection';
-import NavigationBar from './components/NavigationBar';
+import Feature from './components/Feature';
+import Hero from './components/Hero';
+import Header from './components/Header';
 
 const App = () => (
   <div>
-    <NavigationBar />
-    <HeroSection />
+    <Header />
+    <Hero />
+    <Feature/>
   </div>
 );
 
