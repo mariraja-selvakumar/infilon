@@ -1,4 +1,5 @@
 import { Accordion, Button, Row, Col, Image, Container } from 'react-bootstrap';
+import { useState } from 'react';
 import feature from '../assets/images/feature.png';
 import '../index.css';
 
@@ -26,31 +27,39 @@ const features = [
   },
 ];
 
-const Feature = () => (
-  <Container fluid className="feature-section py-5">
-    <h2 className="section-title">Featured options</h2>
-    <Accordion className="feature-section">
-      {features.map((feature, index) => (
-        <Accordion.Item eventKey={String(index)} key={feature.id} className="feature-item">
-          <Accordion.Header className="accordion-title">{feature.title}</Accordion.Header>
-          <Accordion.Body className="feature-content">
-            <Row className="align-items-center">
-              <Col md={4} className="feature-image-container d-none d-md-block">
-                <Image src={feature.image} alt={feature.title} fluid />
-              </Col>
-              <Col md={8} className="feature-text">
-                <h4 className="feature-title">{feature.title}</h4>
-                <p className="feature-description">{feature.description}</p>
-                <Button variant="primary" className="feature-button">
-                  Learn More
-                </Button>
-              </Col>
-            </Row>
-          </Accordion.Body>
-        </Accordion.Item>
-      ))}
-    </Accordion>
-  </Container>
-);
+const Feature = () => {
+  const [activeKey, setActiveKey] = useState<any>('0');
+
+  return (
+    <Container fluid className="feature-section py-5">
+      <h2 className="section-title">Featured options</h2>
+      <Accordion
+        activeKey={activeKey}
+        onSelect={(key) => setActiveKey(key)}
+        className="feature-section"
+      >
+        {features.map((feature, index) => (
+          <Accordion.Item eventKey={String(index)} key={feature.id} className="feature-item">
+            <Accordion.Header className="accordion-title">{feature.title}</Accordion.Header>
+            <Accordion.Body className="feature-content">
+              <Row className="align-items-center">
+                <Col md={4} className="feature-image-container d-none d-md-block">
+                  <Image src={feature.image} alt={feature.title} fluid />
+                </Col>
+                <Col md={8} className="feature-text">
+                  <h4 className="feature-title">{feature.title}</h4>
+                  <p className="feature-description">{feature.description}</p>
+                  <Button variant="primary" className="feature-button">
+                    Learn More
+                  </Button>
+                </Col>
+              </Row>
+            </Accordion.Body>
+          </Accordion.Item>
+        ))}
+      </Accordion>
+    </Container>
+  );
+};
 
 export default Feature;

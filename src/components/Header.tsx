@@ -6,6 +6,12 @@ import logo from '../assets/icons/logo.png';
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
+  const [activeLink, setActiveLink] = useState('Home');
+
+  const handleSelect = (link: string) => {
+    setActiveLink(link);
+    setExpanded(false);
+  };
 
   return (
     <Navbar className="navbar" expand="md">
@@ -18,18 +24,16 @@ const Header = () => {
         <div className="d-flex align-items-center ms-auto">
           <Navbar.Collapse id="navbar-nav">
             <Nav className="me-3">
-              <Nav.Link className="primary-font" href="#" onClick={() => setExpanded(false)}>
-                Home
-              </Nav.Link>
-              <Nav.Link className="primary-font" href="#" onClick={() => setExpanded(false)}>
-                About Us
-              </Nav.Link>
-              <Nav.Link className="primary-font" href="#" onClick={() => setExpanded(false)}>
-                Services
-              </Nav.Link>
-              <Nav.Link className="primary-font" href="#" onClick={() => setExpanded(false)}>
-                Contact
-              </Nav.Link>
+              {['Home', 'About Us', 'Services', 'Contact'].map((link) => (
+                <Nav.Link
+                  key={link}
+                  className={`primary-font ${activeLink === link ? 'active-link' : ''}`}
+                  href="#"
+                  onClick={() => handleSelect(link)}
+                >
+                  {link}
+                </Nav.Link>
+              ))}
             </Nav>
           </Navbar.Collapse>
 

@@ -37,7 +37,7 @@ const items = [
 
 const Story = () => (
   <Container fluid className="story-container px-5">
-    <h2 className="text-center mb-4 story-title">Member stories</h2>
+    <h2 className="story-title">Member stories</h2>
     <Row className="g-4">
       {items.map((item) => (
         <Col xs={12} sm={6} md={6} className="d-flex" key={item.id}>
