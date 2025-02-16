@@ -65,6 +65,7 @@ The build output will be generated in the `dist` folder.
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/) (for linting)
 - [Prettier](https://prettier.io/) (for code formatting)
+- [Netlify](https://www.netlify.com/) (for deployment)
 
 ## Live Demo
 -  We can access the application using this url `https://infilon-fishing.netlify.app/`
