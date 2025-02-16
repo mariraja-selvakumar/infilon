@@ -17,8 +17,8 @@ const Header = () => {
     <Navbar className="navbar" expand="md">
       <Container fluid>
         <div className="d-flex flex-row justify-content-between align-items-center">
-          <img src={logo} alt="logo" width={70} height={40} className="me-5" />
-          <span className="primary-font">Central Texas Fly Fishing</span>
+          <img src={logo} alt="logo" width={70} height={40} className="me-3" />
+          <span className="primary-font d-none d-md-block">Central Texas Fly Fishing</span>
         </div>
 
         <div className="d-flex align-items-center ms-auto">
@@ -37,12 +37,13 @@ const Header = () => {
             </Nav>
           </Navbar.Collapse>
 
+          {/* Hide Moon Icon in Mobile View */}
           <img
             src={moon}
             alt="theme-icon"
             width={25}
             height={25}
-            className="me-3 cursor-pointer"
+            className="me-3 cursor-pointer d-none d-md-block"
             style={{ cursor: 'pointer' }}
           />
 
